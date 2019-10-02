@@ -16,5 +16,14 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         player1 = scan.nextLine();
         player2 = scan.nextLine();
+
+        //Variablernes værdier bestemmes
+        p1Point=0;
+        p2Point=0;
+        max=6;
+        min=1;
+        runde = 0;
+
+
     }
 }
