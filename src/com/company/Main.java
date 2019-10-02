@@ -24,19 +24,22 @@ public class Main {
         player1 = scan.nextLine();
         player2 = scan.nextLine();
 
-
+        for (int i = 0; i < 5; i++) {
+            int []slag = terningKast();
+            int total = slag[0] + slag[1];
+            System.out.println(slag[0]+ " " + slag[1] + " " + total);
         }
     }
 
         //Terningkast der returnerer en array af begge kast
         static int[] terningKast() {
             int diceRollOne, diceRollTwo;
-            int[] diceHitArray;
+            int[] diceHits;
             Random rand = new Random();
             diceRollOne = rand.nextInt(6) + 1;
             diceRollTwo = rand.nextInt(6) + 1;
-            diceHitArray = new int[]{diceRollOne, diceRollTwo};
-            return diceHitArray;
+            diceHits = new int[] {diceRollOne, diceRollTwo};
+            return diceHits;
         }
     }
 
