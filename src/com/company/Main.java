@@ -61,6 +61,7 @@ public class Main {
                             p1turn = true;
                             p2turn = false;
                             System.out.println("Nyt spil startes!");
+                            System.out.println(" ");
                         }
                         else {
                             System.out.println("Tak for spillet :^)");
@@ -92,6 +93,7 @@ public class Main {
                                 p1turn = true;
                                 p2turn = false;
                                 System.out.println("Nyt spil startes!");
+                                System.out.println(" ");
                             }
                             else {
                                 System.out.println("Tak for spillet :^)");
@@ -146,6 +148,7 @@ public class Main {
                                 p1turn = true;
                                 p2turn = false;
                                 System.out.println("Nyt spil startes!");
+                                System.out.println(" ");
                             }
                             else {
                                 System.out.println("Tak for spillet :^)");
@@ -177,6 +180,7 @@ public class Main {
                                         p1turn = true;
                                         p2turn = false;
                                         System.out.println("Nyt spil startes!");
+                                        System.out.println(" ");
                                     }
                                     else {
                                         System.out.println("Tak for spillet :^)");
