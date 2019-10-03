@@ -11,8 +11,8 @@ public class Main {
         String player1, player2;
 
         //Variablernes værdier bestemmes
-        max=6;
-        min=1;
+        max = 6;
+        min = 1;
         runde = 1;
 
         System.out.println("Velkommen til terning spillet, indtast hver jeres navn og tryk enter!");
@@ -40,98 +40,95 @@ public class Main {
         int[] dice;
         //int[] dice = diceThrow();
         while (gameRun == true) {
-            //Spiller 1
-            while (p1turn == true) {
-                dice = diceThrow();
-                if (p1Point > 40 && dice[0] == dice[1]) {
-                    System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
-                    System.out.println(player1 + " vandt!");
-                    break;
-                }
-                else if (dice[0] == dice[1] && dice[0] != 6 && dice[1] != 6 && dice[0] != 1 && dice[1] != 1) {
-                    System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
-                    System.out.println("To ens slå igen!");
-                    p1Point += p1Point + dice[0] + dice[1];
-                    p1turn = true;
-                    p1WinCondition = false;
-                    System.out.println(player1 + " har nu " + p1Point + " point!");
-                }
-                else if (dice[0] == 6 && dice[1] == 6) {
-                    System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
-                    if (p1WinCondition == true) {
-                        System.out.println(player1 + " har vundet!!");
-                        break;
-                    }
-                    System.out.println("To 6'ere! Slå igen og hvis du slår to 6'ere denne eller næste tur igen, så er sejren din!");
-                    p1turn = true;
-                    p1WinCondition = true;
-                    p1Point = p1Point + dice[0] + dice[1];
-                    System.out.println(player1 + " har nu " + p1Point + " point!");
-                }
-                else if (dice[0] == 1 && dice[1] == 1) {
-                    System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
-                    System.out.println("Av! Du slog to 1'ere, der røg alle dine point...");
-                    p1Point = 0;
-                    p1turn = false;
-                    p2turn = true;
-                    p1WinCondition = false;
-                    System.out.println(player1 + " har nu " + p1Point + " point!");
-                }
-
-                else {
-                    System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
-                    p1Point = p1Point + dice[0] + dice[1];
-                    p1turn = false;
-                    p2turn = true;
-                    p1WinCondition = false;
-                    System.out.println(player1 + " har nu " + p1Point + " point!");
-                }
-                //Spiller 2
-                while (p2turn == true) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Indsæt n for næste tur! (Tryk enter efter)");
+            String nextTurn, pepe;
+            pepe = null;
+            nextTurn = input.next();
+            if (nextTurn.equals("n")) {
+                //Spiller 1
+                while (p1turn == true) {
                     dice = diceThrow();
-                    if (p2Point > 40 && dice[0] == dice[1]) {
-                        System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
-                        System.out.println(player2 + " vandt!");
+                    if (p1Point > 40 && dice[0] == dice[1]) {
+                        System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
+                        System.out.println(player1 + " vandt!");
                         break;
-                    }
-                    else if (dice[0] == dice[1] && dice[0] != 6 && dice[1] != 6 && dice[0] != 1 && dice[1] != 1) {
-                        System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                    } else if (dice[0] == dice[1] && dice[0] != 6 && dice[1] != 6 && dice[0] != 1 && dice[1] != 1) {
+                        System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
                         System.out.println("To ens slå igen!");
-                        p2Point += p2Point + dice[0] + dice[1];
-                        p2turn = true;
-                        p2WinCondition = false;
-                        System.out.println(player2 + " har nu " + p2Point + " point!");
-                    }
-                    else if (dice[0] == 6 && dice[1] == 6) {
-                        System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
-                        if (p2WinCondition == true) {
-                            System.out.println(player2 + " har vundet!!");
+                        p1Point += p1Point + dice[0] + dice[1];
+                        p1turn = true;
+                        p1WinCondition = false;
+                        System.out.println(player1 + " har nu " + p1Point + " point!");
+                    } else if (dice[0] == 6 && dice[1] == 6) {
+                        System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
+                        if (p1WinCondition == true) {
+                            System.out.println(player1 + " har vundet!!");
                             break;
                         }
                         System.out.println("To 6'ere! Slå igen og hvis du slår to 6'ere denne eller næste tur igen, så er sejren din!");
-                        p2turn = true;
-
-                        p2WinCondition = true;
-                        p2Point = p2Point + dice[0] + dice[1];
-                        System.out.println(player2 + " har nu " + p2Point + " point!");
-                    }
-                    else if (dice[0] == 1 && dice[1] == 1) {
-                        System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                        p1turn = true;
+                        p1WinCondition = true;
+                        p1Point = p1Point + dice[0] + dice[1];
+                        System.out.println(player1 + " har nu " + p1Point + " point!");
+                    } else if (dice[0] == 1 && dice[1] == 1) {
+                        System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
                         System.out.println("Av! Du slog to 1'ere, der røg alle dine point...");
-                        p2Point = 0;
-                        p2turn = false;
-                        p1turn = true;
-                        p2WinCondition = false;
-                        System.out.println(player2 + " har nu " + p2Point + " point!");
+                        p1Point = 0;
+                        p1turn = false;
+                        p2turn = true;
+                        p1WinCondition = false;
+                        System.out.println(player1 + " har nu " + p1Point + " point!");
+                    } else {
+                        System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
+                        p1Point = p1Point + dice[0] + dice[1];
+                        p1turn = false;
+                        p2turn = true;
+                        p1WinCondition = false;
+                        System.out.println(player1 + " har nu " + p1Point + " point!");
                     }
+                    //Spiller 2
+                    while (p2turn == true) {
+                        dice = diceThrow();
+                        if (p2Point > 40 && dice[0] == dice[1]) {
+                            System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                            System.out.println(player2 + " vandt!");
+                            break;
+                        } else if (dice[0] == dice[1] && dice[0] != 6 && dice[1] != 6 && dice[0] != 1 && dice[1] != 1) {
+                            System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                            System.out.println("To ens slå igen!");
+                            p2Point += p2Point + dice[0] + dice[1];
+                            p2turn = true;
+                            p2WinCondition = false;
+                            System.out.println(player2 + " har nu " + p2Point + " point!");
+                        } else if (dice[0] == 6 && dice[1] == 6) {
+                            System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                            if (p2WinCondition == true) {
+                                System.out.println(player2 + " har vundet!!");
+                                break;
+                            }
+                            System.out.println("To 6'ere! Slå igen og hvis du slår to 6'ere denne eller næste tur igen, så er sejren din!");
+                            p2turn = true;
 
-                    else {
-                        System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
-                        p2Point = p2Point + dice[0] + dice[1];
-                        p2turn = false;
-                        p1turn = true;
-                        p2WinCondition = false;
-                        System.out.println(player2 + " har nu " + p2Point + " point!");
+                            p2WinCondition = true;
+                            p2Point = p2Point + dice[0] + dice[1];
+                            System.out.println(player2 + " har nu " + p2Point + " point!");
+                        } else if (dice[0] == 1 && dice[1] == 1) {
+                            System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                            System.out.println("Av! Du slog to 1'ere, der røg alle dine point...");
+                            p2Point = 0;
+                            p2turn = false;
+                            p1turn = true;
+                            p2WinCondition = false;
+                            System.out.println(player2 + " har nu " + p2Point + " point!");
+                        } else {
+                            System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
+                            p2Point = p2Point + dice[0] + dice[1];
+                            p2turn = false;
+                            p1turn = true;
+                            p2WinCondition = false;
+                            System.out.println(player2 + " har nu " + p2Point + " point!");
+                        }
                     }
                 }
             }
