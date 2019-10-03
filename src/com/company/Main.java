@@ -40,14 +40,15 @@ public class Main {
         int[] dice;
         //int[] dice = diceThrow();
         while (gameRun == true) {
-            Scanner input = new Scanner(System.in);
-            System.out.println("Indsæt n for næste tur! (Tryk enter efter)");
-            String nextTurn, pepe;
-            pepe = null;
-            nextTurn = input.next();
-            if (nextTurn.equals("n")) {
-                //Spiller 1
+            //Spiller 1
                 while (p1turn == true) {
+                    System.out.println("Tryk Enter for næste slag!");
+                    try
+                    {
+                        System.in.read();
+                    }
+                    catch(Exception e)
+                    {}
                     dice = diceThrow();
                     if (p1Point > 40 && dice[0] == dice[1]) {
                         System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
@@ -89,6 +90,13 @@ public class Main {
                     }
                     //Spiller 2
                     while (p2turn == true) {
+                        System.out.println("Tryk Enter for næste slag!");
+                        try
+                        {
+                            System.in.read();
+                        }
+                        catch(Exception e)
+                        {}
                         dice = diceThrow();
                         if (p2Point > 40 && dice[0] == dice[1]) {
                             System.out.println(player2 + " slog " + dice[0] + " og " + dice[1]);
@@ -133,7 +141,7 @@ public class Main {
                 }
             }
         }
-    }
+
         //Terningkast der returnerer en array af begge kast
         static int[] diceThrow() {
             int diceRollOne, diceRollTwo;
@@ -144,6 +152,7 @@ public class Main {
             diceHits = new int[] {diceRollOne, diceRollTwo};
             return diceHits;
         }
+
     }
 
 
