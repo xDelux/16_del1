@@ -46,8 +46,7 @@ public class Main {
                     System.out.println(player1 + "'s tur! Tryk Enter for næste slag!");
                     try {System.in.read();}
                     catch(Exception e) {}
-                    int[] dice = new int[] {6,6};
-                    //dice = diceThrow();
+                    dice = diceThrow();
                     if (p1Point >= 40 && dice[0] == dice[1]) {
                         System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
                         System.out.println(player1 + " vandt!");
