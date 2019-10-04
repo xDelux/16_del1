@@ -37,7 +37,7 @@ public class Main {
         gameRun = true;
         p1WinCondition = false;
         p2WinCondition = false;
-        int[] dice;
+        //int[] dice;
         //int[] dice = diceThrow();
 
         while (gameRun == true) {
@@ -46,8 +46,8 @@ public class Main {
                     System.out.println(player1 + "'s tur! Tryk Enter for næste slag!");
                     try {System.in.read();}
                     catch(Exception e) {}
-
-                    dice = diceThrow();
+                    int[] dice = new int[] {6,6};
+                    //dice = diceThrow();
                     if (p1Point >= 40 && dice[0] == dice[1]) {
                         System.out.println(player1 + " slog " + dice[0] + " og " + dice[1]);
                         System.out.println(player1 + " vandt!");
@@ -65,6 +65,7 @@ public class Main {
                         }
                         else {
                             System.out.println("Tak for spillet :^)");
+                            gameRun = false;
                             break;
                         }
                         }
@@ -97,6 +98,7 @@ public class Main {
                             }
                             else {
                                 System.out.println("Tak for spillet :^)");
+                                gameRun = false;
                                 break;
                             }
                         }
@@ -152,6 +154,7 @@ public class Main {
                             }
                             else {
                                 System.out.println("Tak for spillet :^)");
+                                gameRun = false;
                                 break;
                             }
                         }
@@ -184,6 +187,7 @@ public class Main {
                                     }
                                     else {
                                         System.out.println("Tak for spillet :^)");
+                                        gameRun = false;
                                         break;
                                     }
                                 }
