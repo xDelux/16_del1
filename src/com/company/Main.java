@@ -37,7 +37,7 @@ public class Main {
         gameRun = true;
         p1WinCondition = false;
         p2WinCondition = false;
-        //int[] dice;
+        int[] dice;
         //int[] dice = diceThrow();
 
         while (gameRun == true) {
